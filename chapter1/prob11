@@ -1,0 +1,9 @@
+Q: How would you test the word count program? What kinds of input are most
+likely to uncover bugs if there are any?
+
+A: I would type special characters other than the few it accounts for (eg NULL,
+ESC, CAN). I would also try overflowing the word count by typing (or
+generating) more words than it is capable of reflecting. This could equally be
+accomplished for the character and line count. Inputs with characters that are
+not accounted for by the program and extremely long inputs are most likely to
+uncover bugs.
