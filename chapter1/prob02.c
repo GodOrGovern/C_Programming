@@ -5,6 +5,9 @@
 
 int main(void)
 {
-    printf("\c\n");
+    printf("Backspace: ' \b'\n");
+    printf("Vertical tab: '\v'\n");
+    printf("Single quote: '\''\n");
+    printf("Double quote: '\"'\n");
     return 0;
 }
