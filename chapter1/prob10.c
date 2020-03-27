@@ -15,13 +15,12 @@ int main(void)
                 printf("\\b");
                 break;
             case '\\':
-                printf("%c%c", '\\', '\\');
+                printf("\\\\");
                 break;
             default:
                 printf("%c", c);
         }
     }
 
-    printf("\n");
     return 0;
 }
