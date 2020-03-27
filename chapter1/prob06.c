@@ -4,8 +4,7 @@
 
 int main(void)
 {
-    for (int c; c != EOF; c = getchar())
-        printf("%i\n", c != EOF);
-    printf("%i\n", c);
+    printf("Enter a character: ");
+    printf("The value of \"getchar() != EOF\" is %i\n", getchar() != EOF);
     return 0;
 }
