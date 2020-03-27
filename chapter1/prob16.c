@@ -11,21 +11,23 @@ void copy(char to[], char from[]);
 
 int main(void)
 {
-    int len, max;
+    int len = 0, max = 0;
     char line[MAXLINE];
     char longest[MAXLINE];
 
     max = 0;
-    while ((len = getLine(line, MAXLINE)) > 0)
+    while ((len = getLine(line, MAXLINE)) > 0) {
         if (len > max) {
             max = len;
             copy(longest, line);
         }
+    }
     printf("\n");
     if (max > 0) {
         printf("%s\n", longest);
         printf("%i\n", max);
     }
+
     return 0;
 }
 

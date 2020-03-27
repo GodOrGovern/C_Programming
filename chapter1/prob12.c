@@ -8,11 +8,12 @@ int main(void)
 
     for (int c; c != EOF; c = getchar()) {
         if (c == ' ' || c == '\t' || c = '\t') {
-            if (prev != c)
+            if (prev != c) {
                 printf("\n");
-        }
-        else
+            }
+        } else {
             printf("%c", c);
+        }
 
         prev = c;
     }

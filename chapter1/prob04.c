@@ -6,11 +6,7 @@
 int main(void)
 {
     float fahr, celsius;
-    int lower, upper, step;
-
-    lower = 0;
-    upper = 300;
-    step = 20;
+    int lower = 0, upper = 300, step = 20;
 
     printf("Celsius | Fahrenheit\n");
     printf("---------------------\n");

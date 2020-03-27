@@ -4,21 +4,21 @@
 
 int main(void)
 {
-    int blanks = 0;
-    int tabs = 0;
-    int newlines = 0;
+    int blanks = 0, tabs = 0, newlines = 0;
 
     for (int c; c != EOF; c = getchar()) {
-        if (c == ' ')
+        if (c == ' ') {
             blanks++;
-        else if (c == '\t')
+        } else if (c == '\t') {
             tabs++;
-        else if (c == '\n')
+        } else if (c == '\n') {
             newlines++;
+        }
     }
 
     printf("Blanks: %i\n", blanks);
     printf("Tabs: %i\n", tabs);
     printf("Newlines: %i\n", newlines);
+
     return 0;
 }

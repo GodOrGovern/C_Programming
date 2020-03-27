@@ -6,5 +6,6 @@ int main(void)
 {
     printf("Enter a character: ");
     printf("The value of \"getchar() != EOF\" is %i\n", getchar() != EOF);
+
     return 0;
 }

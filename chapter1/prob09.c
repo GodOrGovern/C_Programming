@@ -8,8 +8,9 @@ int main(void)
     int prev = EOF;
 
     for (int c; c != EOF; c = getchar()) {
-        if ((c == ' ' && prev != ' ') || c != ' ')
+        if ((c == ' ' && prev != ' ') || c != ' ') {
             printf("%c", c);
+        }
         prev = c;
     }
 
