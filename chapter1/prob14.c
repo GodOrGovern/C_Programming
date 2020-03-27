@@ -13,7 +13,6 @@ int main(void)
     /* Keeps track of four categories of input: letters, numbers, whitespace,
      * and other (which is everything else) */
     int categories = 4;
-
     int counts[categories] = { 0 };
     getCounts(counts);
     histogram(counts, categories);

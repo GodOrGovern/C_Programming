@@ -7,13 +7,9 @@ float fahrToCelsius(float fahr);
 
 int main(void)
 {
-    float fahr;
+    int lower = 0, upper = 300, step = 20;
+    float fahr = lower;
 
-    int lower = 0;
-    int upper = 300;
-    int step = 20;
-
-    fahr = lower;
     while (fahr <= upper) {
         printf("%3.0f %0.1f\n", fahr, fahrToCelsius(fahr));
         fahr += step;
