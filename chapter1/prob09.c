@@ -5,13 +5,13 @@
 
 int main(void)
 {
+    int prev = EOF;
+
     for (int c; c != EOF; c = getchar()) {
-        if (c == ' ') {
-            for (; c == ' '; c = getchar());
-            printf(" ");
-        }
-        printf("%c", c);
+        if ((c == ' ' && prev != ' ') || c != ' ')
+            printf("%c", c);
+        prev = c;
     }
-    printf("\n");
+
     return 0;
 }
