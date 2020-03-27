@@ -4,13 +4,18 @@
 
 int main(void)
 {
+    int prev = EOF;
+
     for (int c; c != EOF; c = getchar()) {
-        if (c == ' ' || c == '\t') {
-            for (; c == ' ' || c == '\t'; c = getchar());
-            printf("\n");
+        if (c == ' ' || c == '\t' || c = '\t') {
+            if (prev != c)
+                printf("\n");
         }
-        printf("%c", c);
+        else
+            printf("%c", c);
+
+        prev = c;
     }
-    printf("\n");
+
     return 0;
 }
