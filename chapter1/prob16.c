@@ -15,7 +15,6 @@ int main(void)
     char line[MAXLINE];
     char longest[MAXLINE];
 
-    max = 0;
     while ((len = getLine(line, MAXLINE)) > 0) {
         if (len > max) {
             max = len;
