@@ -13,8 +13,9 @@ int main(void)
     char line[MAXLINE];
 
     while ((len = getLine(line, MAXLINE)) > 0) {
-        while (line[len-1] == ' ' || line[len-1] == '\t' || line[len-1] == '\n')
+        while (line[len-1] == ' ' || line[len-1] == '\t' || line[len-1] == '\n') {
             len--;
+        }
         line[len] = '\0';
         printf("%s\n", line);
     }
@@ -25,10 +26,12 @@ int main(void)
 int getLine(char line[], int limit)
 {
     int c, i = 0;
-    for (i = 0; i < limit-1 && (c=getchar())!=EOF && c!='\n'; i++)
+    for (i = 0; i < limit-1 && (c=getchar())!=EOF && c!='\n'; i++) {
         line[i] = c;
-    if (c == '\n')
+    }
+    if (c == '\n') {
         line[i] = c;
+    }
     line[++i] = '\0';
     return i;
 }
