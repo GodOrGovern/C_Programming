@@ -4,32 +4,40 @@
 
 #include <stdio.h>
 
-void getLengths(int* lengths);
-void draw_horizontal(int* arr, int length);
-void draw_vertical(int* arr, int length);
+#define MAX_LENGTH 10
+
+void getLengths(int* lengths, int maxLength);
+void drawHorizontal(int* arr, int length);
+void drawVertical(int* arr, int length);
 int maxArr(int* arr, int length);
 
 int main(void)
 {
-    int lengths[10] = { 0 };
-    getLengths(lengths);
-    draw_horizontal(lengths, 10);
+    int lengths[MAX_LENGTH+1] = { 0 };
+    getLengths(lengths, MAX_LENGTH);
+
     printf("\n");
-    draw_vertical(lengths, 10);
+    drawHorizontal(lengths, MAX_LENGTH+1);
+
+    printf("\n");
+    drawVertical(lengths, MAX_LENGTH+1);
+
     return 0;
 }
 
-void getLengths(int* lengths)
+void getLengths(int* lengths, int maxLength)
 {
-    int inWord, curLength = 0;
+    int c;
+    int inWord = 0;
+    int curLength = 0;
 
-    for (int c; c != EOF; c = getchar()) {
+    while ((c = getchar()) != EOF) {
         if (c == ' ' || c == '\n' || c == '\t') {
             if (inWord) {
-                if (curLength >= 10)
-                    lengths[9] += 1;
+                if (curLength > maxLength)
+                    lengths[maxLength] += 1;
                 else
-                    lengths[curLength-1] += 1;
+                    lengths[curLength] += 1;
                 curLength = 0;
                 inWord = 0;
             }
@@ -42,24 +50,30 @@ void getLengths(int* lengths)
     }
 }
 
-void draw_horizontal(int* arr, int length)
+void drawHorizontal(int* arr, int arrSize)
 {
-    for (int i = 0; i < length; i++) {
+    for (int i = 1; i < arrSize; i++) {
+        if (i == arrSize - 1)
+            printf(">%i|", i-1);
+        else
+            printf("%2i|", i);
+
         for (int j = 0; j < arr[i]; j++)
             printf("#");
         printf("\n");
     }
 }
 
-void draw_vertical(int* arr, int length)
+void drawVertical(int* arr, int arrSize)
 {
-    int height = maxArr(arr, length);
-    for (int i = height; i > 0; i--) {
-        for (int j = 0; j < length; j++) {
+    int maxHeight = maxArr(arr, arrSize);
+    for (int i = maxHeight; i > 0; i--) {
+        for (int j = 0; j < arrSize; j++) {
             if (arr[j] >= i)
-                printf("#######");
+                printf("#");
             else
-                printf("       ");
+                printf(" ");
+            printf("  ");
         }
 
         printf("\n");
