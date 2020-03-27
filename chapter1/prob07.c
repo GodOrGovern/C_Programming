@@ -4,6 +4,6 @@
 
 int main(void)
 {
-    printf("%i\n", EOF);
+    printf("The value of EOF is %i\n", EOF);
     return 0;
 }
