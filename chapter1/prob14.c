@@ -1,4 +1,4 @@
-/* Write a program to print a histogram of the frequencies of dif- ferent
+/* Write a program to print a histogram of the frequencies of different
  * characters in its input. */
 
 #include <stdio.h>
@@ -10,6 +10,8 @@ int maxArr(int* arr, int length);
 
 int main(void)
 {
+    /* Keeps track of four categories of input: letters, numbers, whitespace,
+     * and other (which is everything else) */
     int counts[4] = { 0 };
     getCounts(counts);
     histogram(counts, 4);
@@ -36,11 +38,11 @@ void histogram(int* arr, int length)
     for (int i = height; i > 0; i--) {
         for (int j = 0; j < length; j++) {
             if (arr[j] >= i)
-                printf("#######");
+                printf("#");
             else
-                printf("       ");
+                printf(" ");
+            printf(" ");
         }
-
         printf("\n");
     }
 }
