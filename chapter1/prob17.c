@@ -3,8 +3,9 @@
 #include <stdio.h>
 
 #define MAXLINE 1000
+#define MINLENGTH 80
 
-int getLine(char line[], int maxline);
+int getLine(char line[], int limit);
 
 int main(void)
 {
@@ -12,24 +13,23 @@ int main(void)
     char line[MAXLINE];
 
     while ((len = getLine(line, MAXLINE)) > 0)
-        if (len > 80)
+        if (len > MINLENGTH)
             printf("%s\n", line);
 
     return 0;
 }
 
-int getLine(char s[], int lim)
+int getLine(char line[], int limit)
 {
-    int c, i, overflow = 0;
-    for (i = 0; i < lim-1 && (c=getchar())!=EOF && c!='\n'; i++)
-        s[i] = c;
-    if (c != EOF && c != '\n')
-        for (overflow = 0; (c=getchar()) != EOF && c != '\n'; overflow++);
-    else if (c == '\n') {
-        s[i] = c;
+    int c, i = 0;
+
+    for (i = 0; i < limit-1 && (c=getchar())!=EOF && c!='\n'; i++)
+        line[i] = c;
+    if (c == '\n') {
+        line[i] = c;
         i++;
     }
 
-    s[i] = '\0';
-    return i+overflow;
+    line[i] = '\0';
+    return i;
 }
