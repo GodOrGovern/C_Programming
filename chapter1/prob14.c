@@ -6,14 +6,15 @@
 
 #include "helpers.h"
 
-#define CATEGORIES
+#define CATEGORIES 4
 
+/* Store the frequencies of various kinds of inputs in 'counts'.
+ * The 0th element is for letters, 1st for numbers, 2nd for whitespace, and 3rd
+ * for everything else */
 void getCounts(int* counts);
 
 int main(void)
 {
-    /* Keeps track of four categories of input: letters, numbers, whitespace,
-     * and other (which is everything else) */
     int counts[CATEGORIES] = { 0 };
     getCounts(counts);
 

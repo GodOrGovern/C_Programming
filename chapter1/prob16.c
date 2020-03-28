@@ -6,7 +6,10 @@
 
 #define MAXLINE 1000
 
-int getLine(char line[], int maxLength);
+/* Copy a line from 'stdin' to 'line' up to 'limit' characters. Return the
+ * length of 'line', even beyond 'limit' */
+int getLine(char line[], int limit);
+// Copy the elements in 'from' to 'to'
 void copy(char to[], char from[]);
 
 int main(void)
@@ -30,10 +33,10 @@ int main(void)
     return 0;
 }
 
-int getLine(char line[], int maxLength)
+int getLine(char line[], int limit)
 {
     int c, i, overflow = 0;
-    for (i = 0; i < maxLength-1 && (c=getchar())!=EOF && c!='\n'; i++) {
+    for (i = 0; i < limit-1 && (c=getchar())!=EOF && c!='\n'; i++) {
         line[i] = c;
     }
     if (c != EOF && c != '\n') {

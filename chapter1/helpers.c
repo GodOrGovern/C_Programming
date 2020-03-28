@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "helpers.h"
 
 int getLine(char line[], int limit)
@@ -13,10 +14,10 @@ int getLine(char line[], int limit)
     return i;
 }
 
-void drawHorizontal(int* arr, int arrSize)
+void drawHorizontal(int* arr, int length)
 {
-    printf("\n")
-    for (int i = 1; i < arrSize; i++) {
+    printf("\n");
+    for (int i = 1; i < length; i++) {
         for (int j = 0; j < arr[i]; j++) {
             printf("#");
         }
@@ -26,7 +27,7 @@ void drawHorizontal(int* arr, int arrSize)
 
 void drawVertical(int* arr, int length)
 {
-    printf("\n")
+    printf("\n");
     int height = maxArr(arr, length);
     for (int i = height; i > 0; i--) {
         for (int j = 0; j < length; j++) {

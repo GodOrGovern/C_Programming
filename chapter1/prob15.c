@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 
+// Convert the value in 'fahr' from Fahrenheit to Celsius
 float fahrToCelsius(float fahr);
 
 int main(void)

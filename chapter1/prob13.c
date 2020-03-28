@@ -8,6 +8,9 @@
 
 #define MAX_LENGTH 10
 
+/* Each index of 'lengths' contains the number of words with length equal to
+ * the value of the index. Every word longer than or equal to 'maxLength' is
+ * counted in the last index of 'lengths' */
 void getLengths(int* lengths, int maxLength);
 
 int main(void)
