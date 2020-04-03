@@ -9,7 +9,7 @@ int main(void)
 
     for (int c; c != EOF; c = getchar()) {
         if ((c == ' ' && prev != ' ') || c != ' ') {
-            printf("%c", c);
+            putchar(c);
         }
         prev = c;
     }

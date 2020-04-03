@@ -25,6 +25,7 @@ int main()
             if (spaces > 0) {
 
             }
+            putchar(c);
         }
 
         prev = c;

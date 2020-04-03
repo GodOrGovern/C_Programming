@@ -9,10 +9,10 @@ int main(void)
     for (int c; c != EOF; c = getchar()) {
         if (c == ' ' || c == '\t' || c = '\t') {
             if (prev != c) {
-                printf("\n");
+                putchar('\n');
             }
         } else {
-            printf("%c", c);
+            putchar(c);
         }
 
         prev = c;

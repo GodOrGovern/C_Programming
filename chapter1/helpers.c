@@ -19,26 +19,26 @@ void drawHorizontal(int* arr, int length)
     printf("\n");
     for (int i = 1; i < length; i++) {
         for (int j = 0; j < arr[i]; j++) {
-            printf("#");
+            putchar('#');
         }
-        printf("\n");
+        putchar('\n');
     }
 }
 
 void drawVertical(int* arr, int length)
 {
-    printf("\n");
+    putchar('\n');
     int height = maxArr(arr, length);
     for (int i = height; i > 0; i--) {
         for (int j = 0; j < length; j++) {
             if (arr[j] >= i) {
-                printf("#");
+                putchar('#');
             } else {
-                printf(" ");
+                putchar(' ');
             }
-            printf(" ");
+            putchar(' ');
         }
-        printf("\n");
+        putchar('\n');
     }
 }
 

@@ -17,10 +17,10 @@ int main()
     while ((c = getchar()) != EOF) {
         if (c == '\t') {
             for (int i = 0; i < (TABSIZE - (pos % TABSIZE)); i++) {
-                printf(" ");
+                putchar(' ');
             }
         } else {
-            printf("%c", c);
+            putchar(c);
             pos++;
         }
 
