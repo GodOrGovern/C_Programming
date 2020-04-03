@@ -5,7 +5,7 @@
 /* Question: When either a tab or a single blank would suffice to reach a tab
  * stop, which should be given preference?
  * Answer: A blank should be given preference as tabs do not have a uniform
- * width. */
+ * size */
 
 #include <stdio.h>
 
@@ -13,22 +13,49 @@
 
 int main()
 {
-    int c = EOF, spaces = 0, pos = 0;
+    /* c = current character, spaces = number of current spaces in a row,
+     * enter = the position of the first space in a sequence of spaces,
+     * pos = current position (reset at tabs and newlines) */
+    int c = EOF, spaces = 0, enter = 0, pos = 0;
 
     while ((c = getchar()) != EOF) {
         if (c == ' ') {
-            spaces += 1;
-        } else if (c == '\n' || c == '\t') {
-            spaces = pos = 0;
-            putchar(c);
-        } else {
-            if (spaces > 0) {
-
+            if (spaces == 0) {
+                enter = pos;
             }
+            spaces++;
+        } else {
+            // Always print a single space over a tab
+            if (spaces == 1) {
+                putchar(' ');
+            }
+            else if (spaces > 1) {
+                // Print a tab if the spaces extend beyond the next tabstop
+                int remain = TABSIZE - (enter % TABSIZE);
+                if (spaces > remain) {
+                    putchar('\t');
+                    spaces -= remain;
+                }
+                // Print tabs as long as there are ample spaces
+                while (spaces >= TABSIZE) {
+                    putchar('\t');
+                    spaces -= TABSIZE;
+                }
+                // Print whatever spaces remain
+                for (; spaces > 0; spaces--) {
+                    putchar(' ');
+                }
+            }
+
+            spaces = 0;
             putchar(c);
         }
 
-        prev = c;
+        pos++;
+
+        if (c == '\n' || c == '\t') {
+            pos = 0;
+        }
     }
 
     return 0;
