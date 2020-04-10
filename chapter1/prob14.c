@@ -33,7 +33,7 @@ void getCounts(int* counts)
             counts[1] += 1;
         } else if (c == ' ' || c == '\n' || c == '\t') {
             counts[2] += 1;
-        } else
+        } else {
             counts[3] += 1;
         }
     }
