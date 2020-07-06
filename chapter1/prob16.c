@@ -16,7 +16,7 @@ int getLine(char line[], int limit);
 /*
  * Copy the elements in 'from' to 'to'
 */
-void copy(char to[], char from[]);
+void copy(char from[], char to[]);
 
 int main(void)
 {
@@ -27,7 +27,7 @@ int main(void)
     while ((len = getLine(line, MAXLINE)) > 0) {
         if (len > max) {
             max = len;
-            copy(longest, line);
+            copy(line, longest);
         }
     }
     printf("\n");
@@ -55,7 +55,7 @@ int getLine(char line[], int limit)
     return i+overflow;
 }
 
-void copy(char to[], char from[])
+void copy(char from[], char to[])
 {
     int i = 0;
     while ((to[i] = from[i]) != '\0') {
