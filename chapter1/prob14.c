@@ -1,14 +1,18 @@
-/* Write a program to print a histogram of the frequencies of different
- * characters in its input. */
+/*
+ * Write a program to print a histogram of the frequencies of different
+ * characters in its input
+*/
 
 #include <stdio.h>
 #include <ctype.h>
 
 #define CATEGORIES 4
 
-/* Store the frequencies of various kinds of inputs in 'counts'.
+/*
+ * Store the frequencies of various kinds of inputs in 'counts'.
  * The 0th element is for letters, 1st for numbers, 2nd for whitespace, and 3rd
- * for everything else */
+ * for everything else
+*/
 void getCounts(int* counts);
 void drawHorizontal(int* arr, int length);
 void drawVertical(int* arr, int length);

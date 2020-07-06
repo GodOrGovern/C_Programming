@@ -1,15 +1,21 @@
-/* Revise the main routine of the longest-line program so it will correctly
+/*
+ * Revise the main routine of the longest-line program so it will correctly
  * print the length of arbitrarily long input lines, and as much as possible of
- * the text. */
+ * the text
+*/
 
 #include <stdio.h>
 
 #define MAXLINE 1000
 
-/* Copy a line from 'stdin' to 'line' up to 'limit' characters. Return the
- * length of 'line', even beyond 'limit' */
+/*
+ * Copy a line from 'stdin' to 'line' up to 'limit' characters. Return the
+ * length of 'line', even beyond 'limit'
+*/
 int getLine(char line[], int limit);
-// Copy the elements in 'from' to 'to'
+/*
+ * Copy the elements in 'from' to 'to'
+*/
 void copy(char to[], char from[]);
 
 int main(void)

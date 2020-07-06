@@ -1,15 +1,19 @@
-/* Write a program to print a histogram of the lengths of words in its input.
+/*
+ * Write a program to print a histogram of the lengths of words in its input.
  * It is easy to draw the histogram with the bars horizontal; a vertical
- * orientation is more challenging. */
+ * orientation is more challenging
+*/
 
 #include <stdio.h>
 #include <ctype.h>
 
 #define MAX_LENGTH 10
 
-/* Each index of 'lengths' contains the number of words with length equal to
+/*
+ * Each index of 'lengths' contains the number of words with length equal to
  * the value of the index. Every word longer than or equal to 'maxLength' is
- * counted in the last index of 'lengths' */
+ * counted in the last index of 'lengths'
+*/
 void getLengths(int* lengths, int maxLength);
 void drawHorizontal(int* arr, int length);
 void drawVertical(int* arr, int length);

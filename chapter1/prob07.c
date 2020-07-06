@@ -1,4 +1,6 @@
-// Write a program to print the value of EOF
+/*
+ * Write a program to print the value of EOF
+*/
 
 #include <stdio.h>
 

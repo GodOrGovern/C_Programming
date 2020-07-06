@@ -1,9 +1,13 @@
-/* Rewrite the temperature conversion program of Section 1.2 to use a function
- * for conversion */
+/*
+ * Rewrite the temperature conversion program of Section 1.2 to use a function
+ * for conversion
+*/
 
 #include <stdio.h>
 
-// Convert the value in 'fahr' from Fahrenheit to Celsius
+/*
+ * Convert the value in 'fahr' from Fahrenheit to Celsius
+*/
 float fahrToCelsius(float fahr);
 
 int main(void)

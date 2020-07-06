@@ -1,11 +1,15 @@
-/* Write a program entab that replaces strings of blanks by the minimum number
+/*
+ * Write a program entab that replaces strings of blanks by the minimum number
  * of tabs and blanks to achieve the same spacing. Use the same tab stops as
- * for detab. */
+ * for detab
+*/
 
-/* Question: When either a tab or a single blank would suffice to reach a tab
- * stop, which should be given preference?
+/*
+ * Question: When either a tab or a single blank would suffice to reach a tab
+ *   stop, which should be given preference?
  * Answer: A blank should be given preference as tabs do not have a uniform
- * size */
+ *   size
+*/
 
 #include <stdio.h>
 
@@ -13,9 +17,11 @@
 
 int main()
 {
-    /* c = current character, spaces = number of current spaces in a row,
+    /*
+     * c = current character, spaces = number of current spaces in a row,
      * enter = the position of the first space in a sequence of spaces,
-     * pos = current position (reset at tabs and newlines) */
+     * pos = current position (reset at tabs and newlines)
+    */
     int c = EOF, spaces = 0, enter = 0, pos = 0;
 
     while ((c = getchar()) != EOF) {
