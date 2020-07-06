@@ -30,7 +30,7 @@ int main(void)
             copy(line, longest);
         }
     }
-    printf("\n");
+    putchar('\n');
     if (max > 0) {
         printf("%s\n", longest);
         printf("%i\n", max);
