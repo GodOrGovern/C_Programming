@@ -10,8 +10,8 @@ int main(void)
     float fahr, celsius;
     int lower = 0, upper = 300, step = 20;
 
-    printf("Fahrenheit | Celsius\n");
-    printf("---------------------\n");
+    puts("Fahrenheit | Celsius");
+    puts("---------------------");
 
     fahr = upper;
     while (fahr >= lower) {

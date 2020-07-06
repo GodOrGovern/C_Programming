@@ -32,7 +32,7 @@ int main(void)
     }
     putchar('\n');
     if (max > 0) {
-        printf("%s\n", longest);
+        puts(longest);
         printf("%i\n", max);
     }
 

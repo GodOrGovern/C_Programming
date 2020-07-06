@@ -33,7 +33,7 @@ int main(void)
             len--;
         }
         line[len] = '\0';
-        printf("%s\n", line);
+        puts(line);
     }
 
     return 0;

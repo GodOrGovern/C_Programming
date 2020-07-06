@@ -29,7 +29,7 @@ int main(void)
 
     while ((len = getLine(line, MAXLINE)) > 0) {
         if (len > MINLENGTH) {
-            printf("%s\n", line);
+            puts(line);
         }
     }
 

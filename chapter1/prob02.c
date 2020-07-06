@@ -7,10 +7,10 @@
 
 int main(void)
 {
-    printf("Backspace: ' \b'\n");
-    printf("Vertical tab: '\v'\n");
-    printf("Single quote: '\''\n");
-    printf("Double quote: '\"'\n");
+    puts("Backspace: ' \b'");
+    puts("Vertical tab: '\v'");
+    puts("Single quote: '\''");
+    puts("Double quote: '\"'");
 
     return 0;
 }
