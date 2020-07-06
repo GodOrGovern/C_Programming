@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <ctype.h>
+#include <limits.h>
 
 #define MAX_LENGTH 10
 
@@ -85,7 +86,7 @@ void drawVertical(int* arr, int length)
 
 int maxArr(int* arr, int length)
 {
-    int curMax = 0;
+    int curMax = INT_MIN;
     for (int i = 0; i < length; i++) {
         if (arr[i] > curMax) {
             curMax = arr[i];
