@@ -13,19 +13,17 @@
 /*
  * Summary:
  *   Store the lengths of words in an array where the index is the length. The
- *   last index counts all lengths greater than or equal to its index
+ *   last index counts all lengths >= the value of the index
  * Parameters:
  *   lengths   (int[]): tracks the lengths of words
- *   maxLength (int):   all lengths greater than or equal to this value are tracked by
- *                        the last index
+ *   maxLength (int):   all lengths >= this value are tracked by the last index
  * Return Value:
  *   Doesn't return anything. (Note: 'lengths' is modified in place)
  * Description:
  *   Reads characters from stdin. Call the length of the current word
  *   'curLength'. When whitespace is encountered 'lengths[curLength]' is
- *   incremented by 1. If 'curLength' is greater than 'maxLength',
- *   'lengths[maxLength]' is incremented by 1. Adjacent blanks are not counted
- *   in 'lengths[]'
+ *   incremented by 1. If 'curLength' > 'maxLength', 'lengths[maxLength]' is
+ *   incremented by 1. Adjacent blanks are not counted in 'lengths[]'
 */
 void getLengths(int* lengths, int maxLength);
 /*
@@ -54,8 +52,8 @@ void drawHorizontal(int* arr, int length);
  *   the other) are used. The outer loop starts at 'maxHeight' and is decremented
  *   by 1 on each iteration. Call this value 'curHeight'. The inner loop
  *   iterates over all the values in 'arr[]' starting at 'arr[1]'. Call this
- *   value 'index'. If 'arr[index]' is greater than or equal to 'curHeight', a
- *   '#' character is printed to stdout. Otherwise a space is printed.
+ *   value 'index'. If 'arr[index]' >= 'curHeight', a '#' character is printed
+ *   to stdout. Otherwise a space is printed.
 */
 void drawVertical(int* arr, int length);
 /*
@@ -68,7 +66,7 @@ void drawVertical(int* arr, int length);
  *   Largest value in 'arr[]' (int)
  * Description:
  *   Iterates over 'arr[]' comparing each value against the largest value found
- *   so far. That value is returned
+ *   so far. The largest value is returned
 */
 int maxArr(int* arr, int length);
 

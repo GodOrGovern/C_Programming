@@ -10,15 +10,15 @@
 
 /*
  * Summary:
- *   Copy a line from stdin to the array 'line'
+ *   Copy a line from stdin to the array 'line[]'
  * Parameters:
  *   line  (char[]): stores the copied characters
  *   limit (int):    maximum number of characters to be copied
  * Return Value:
- *   The number of characters in the copied line. (Note: 'line' is modified in
+ *   The number of characters in the copied line. (Note: 'line[]' is modified in
  *   place)
  * Description:
- *   Up to 'limit' characters are copied from stdin to the array 'line', which
+ *   Up to 'limit' characters are copied from stdin to the array 'line[]', which
  *   is modified in place. The length of the copied line is returned.
 */
 int getLine(char line[], int limit);

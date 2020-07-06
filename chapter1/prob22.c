@@ -17,21 +17,21 @@
  * Summary:
  *   Folds a line
  * Parameters:
- *   line:   characters being folded
- *   remain: number of characters that still have to be folded
- *   start:  position in 'line' where the folding starts
- *   length: maximum length of each folded line
+ *   line   (char[]): characters being folded
+ *   remain (int):    number of characters that still have to be folded
+ *   start  (int):    position in 'line' where the folding starts
+ *   length (int):    maximum length of each folded line
  * Return Value:
  *   Nothing is returned. (Note: characters are printed to stdout)
  * Description:
- *   If 'remain' is greater than 'length', 'line' is folded at the last blank
- *   character before 'line[start+remain]'. If there is no blank character,
- *   it is folded at 'line[start+remain]'. Call the spot where it is folded
- *   'end'. The characters from 'line[start]' to 'line[end]' are printed. The
- *   function then calls itself with updated values:
+ *   If 'remain' > 'length', 'line[]' is folded at the last blank character
+ *   before 'line[start+remain]'. If there is no blank character, it is folded
+ *   at 'line[start+remain]'. Call the spot where it is folded 'end'. The
+ *   characters from 'line[start]' to 'line[end]' are printed. The function
+ *   then calls itself with updated values:
  *     foldLine(line, remain-(end-start), end, length)
- *   If 'remain' is not greater than 'length' the characters from 'line[start]'
- *   to 'line[start+remain]' are printed and the program terminates.
+ *   If 'remain' <= 'length' the characters from 'line[start]' to
+ *   'line[start+remain]' are printed and the program terminates.
  * Bugs:
  *   If there are two adjacent whitespace characters, the first being at the
  *   position where 'line' is folded, they are printed on the same line.
@@ -39,15 +39,15 @@
 void foldLine(char line[], int remain, int start, int length);
 /*
  * Summary:
- *   Copy a line from stdin to the array 'line'
+ *   Copy a line from stdin to the array 'line[]'
  * Parameters:
  *   line  (char[]): stores the copied characters
  *   limit (int):    maximum number of characters to be copied
  * Return Value:
- *   The number of characters in the copied line. (Note: 'line' is modified in
+ *   The number of characters in the copied line. (Note: 'line[]' is modified in
  *   place)
  * Description:
- *   Up to 'limit' characters are copied from stdin to the array 'line', which
+ *   Up to 'limit' characters are copied from stdin to the array 'line[]', which
  *   is modified in place. The length of the copied line is returned.
 */
 int getLine(char line[], int limit);
