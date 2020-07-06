@@ -24,8 +24,8 @@
  * Return Value:
  *   Nothing is returned. (Note: characters are printed to stdout)
  * Description:
- *   If 'remain' is greater than 'length', 'line' is folded at the last non-blank
- *   character before 'line[start+remain]'. If there is no non-blank character,
+ *   If 'remain' is greater than 'length', 'line' is folded at the last blank
+ *   character before 'line[start+remain]'. If there is no blank character,
  *   it is folded at 'line[start+remain]'. Call the spot where it is folded
  *   'end'. The characters from 'line[start]' to 'line[end]' are printed. The
  *   function then calls itself with updated values:
