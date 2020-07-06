@@ -11,7 +11,7 @@ int main(void)
 
     for (int c; c != EOF; c = getchar()) {
         if (isspace(c)) {
-            if (isspace(prev)) {
+            if (!isspace(prev)) {
                 putchar('\n');
             }
         } else {
