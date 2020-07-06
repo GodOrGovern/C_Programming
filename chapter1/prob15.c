@@ -11,8 +11,11 @@ int main(void)
     int lower = 0, upper = 300, step = 20;
     float fahr = lower;
 
+    printf("Fahrenheit | Celsius\n");
+    printf("---------------------\n");
+
     while (fahr <= upper) {
-        printf("%3.0f %0.1f\n", fahr, fahrToCelsius(fahr));
+        printf("%10.0f | %6.1f\n", fahr, fahrToCelsius(fahr));
         fahr += step;
     }
 
