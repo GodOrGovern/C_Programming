@@ -57,7 +57,7 @@ void getLengths(int* lengths, int maxLength)
 
 void drawHorizontal(int* arr, int length)
 {
-    printf("\n");
+    putchar('\n');
     for (int i = 1; i < length; i++) {
         for (int j = 0; j < arr[i]; j++) {
             putchar('#');

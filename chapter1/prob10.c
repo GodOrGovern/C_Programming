@@ -20,7 +20,7 @@ int main(void)
                 printf("\\\\");
                 break;
             default:
-                printf("%c", c);
+                putchar(c);
         }
     }
 
