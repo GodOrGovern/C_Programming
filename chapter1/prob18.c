@@ -2,6 +2,7 @@
  * and to delete entirely blank lines */
 
 #include <stdio.h>
+#include <ctype.h>
 
 #define MAXLINE 1000
 
@@ -26,7 +27,7 @@ int main(void)
     char line[MAXLINE];
 
     while ((len = getLine(line, MAXLINE)) > 0) {
-        while (line[len-1] == ' ' || line[len-1] == '\t' || line[len-1] == '\n') {
+        while (isspace(line[len-1])) {
             len--;
         }
         line[len] = '\0';

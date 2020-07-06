@@ -32,7 +32,7 @@ void getCounts(int* counts)
             counts[0] += 1;
         } else if (isdigit(c)) {
             counts[1] += 1;
-        } else if (c == ' ' || c == '\n' || c == '\t') {
+        } else if (isspace(c)) {
             counts[2] += 1;
         } else {
             counts[3] += 1;

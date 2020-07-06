@@ -3,6 +3,7 @@
  * orientation is more challenging. */
 
 #include <stdio.h>
+#include <ctype.h>
 
 #define MAX_LENGTH 10
 
@@ -30,7 +31,7 @@ void getLengths(int* lengths, int maxLength)
     int c = EOF, inWord = 0, curLength = 0;
 
     while ((c = getchar()) != EOF) {
-        if (c == ' ' || c == '\n' || c == '\t') {
+        if (isspace(c)) {
             if (inWord) {
                 if (curLength > maxLength) {
                     lengths[maxLength] += 1;
