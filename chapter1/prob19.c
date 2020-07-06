@@ -8,20 +8,28 @@
 #define MAXLINE 1000
 
 /*
- * Reverse the string stored in 'line' and store the result in 'revLine'.
- * 'line' has 'length' characters. It assumes that 'line[length-1] == '\n''
- * and 'line[length] == '\0''
+ * Summary:
+ *   Reverse 'line' and store the result in 'revLine'
+ * Parameters:
+ *   line    (char[]): line being reversed
+ *   revLine (char[]): reversed 'line'
+ *   length  (int):    the number of characters in 'line' (and thus 'revLine')
+ * Return Value:
+ *   Doesn't return anything. (Note: 'revLine' is modified in place)
+ * Description:
+ *   'line' is iterated over in reverse. Each character is added to 'revLine'
+ *   starting at 'revLine[0]' until the first character in 'line' is reached.
 */
 void reverse(char line[], char revLine[], int length);
 /*
  * Summary:
  *   Copy a line from stdin to the array 'line'
  * Parameters:
- *   line:  stores the copied characters
- *   limit: maximum number of characters to be copied
+ *   line  (char[]): stores the copied characters
+ *   limit (int):    maximum number of characters to be copied
  * Return Value:
- *   The number of characters in the copied line is returned. (Note: 'line' is
- *   modified in place)
+ *   The number of characters in the copied line. (Note: 'line' is modified in
+ *   place)
  * Description:
  *   Up to 'limit' characters are copied from stdin to the array 'line', which
  *   is modified in place. The length of the copied line is returned.

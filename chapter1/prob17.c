@@ -11,11 +11,11 @@
  * Summary:
  *   Copy a line from stdin to the array 'line'
  * Parameters:
- *   line:  stores the copied characters
- *   limit: maximum number of characters to be copied
+ *   line  (char[]): stores the copied characters
+ *   limit (int):    maximum number of characters to be copied
  * Return Value:
- *   The number of characters in the copied line is returned. (Note: 'line' is
- *   modified in place)
+ *   The number of characters in the copied line. (Note: 'line' is modified in
+ *   place)
  * Description:
  *   Up to 'limit' characters are copied from stdin to the array 'line', which
  *   is modified in place. The length of the copied line is returned.

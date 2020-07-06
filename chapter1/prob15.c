@@ -6,7 +6,14 @@
 #include <stdio.h>
 
 /*
- * Convert the value in 'fahr' from Fahrenheit to Celsius
+ * Summary:
+ *   Converts a temperature in Fahrenheit to Celsius
+ * Parameters:
+ *   fahr (float): temperature in Fahrenheit
+ * Return Value:
+ *   Celsius value of 'fahr' (float)
+ * Description:
+ *   Uses the conversion formula for Fahrenheit to Celsius
 */
 float fahrToCelsius(float fahr);
 

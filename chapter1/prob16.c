@@ -9,12 +9,30 @@
 #define MAXLINE 1000
 
 /*
- * Copy a line from 'stdin' to 'line' up to 'limit' characters. Return the
- * length of 'line', even beyond 'limit'
+ * Summary:
+ *   Copy a line from stdin to the array 'line'
+ * Parameters:
+ *   line  (char[]): stores the copied characters
+ *   limit (int):    maximum number of characters to be copied
+ * Return Value:
+ *   The number of characters in the copied line. (Note: 'line' is modified in
+ *   place)
+ * Description:
+ *   Up to 'limit' characters are copied from stdin to the array 'line', which
+ *   is modified in place. The length of the copied line is returned.
 */
 int getLine(char line[], int limit);
 /*
- * Copy the elements in 'from' to 'to'
+ * Summary:
+ *   Copy the characters in 'from' to 'to'
+ * Parameters:
+ *   from (char[]): characters being copied
+ *   to   (char[]): copy of 'from'
+ * Return Value:
+ *   Doesn't return anything. (Note: 'to' is modified in place)
+ * Description:
+ *   'from[]' is iterated over from start to end. Each character is copied to
+ *   the corresponding index in 'to'
 */
 void copy(char from[], char to[]);
 
