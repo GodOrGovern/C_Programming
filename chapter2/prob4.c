@@ -16,13 +16,13 @@
  *   Doesn't return anything. (Note: 's1[]' is modified in place)
  * Description:
  *   Call an array that can be indexed by chars 'found[]'. The value of each
- *   index in 'found' is 'true' if the corresponding character is in 's2[]' and
+ *   index in 'found[]' is 'true' if the corresponding character is in 's2[]' and
  *   false otherwise. Iterate over 's1[]' and use 'found[]' to check if each
  *   character is in 's2[]'. 's1[]' is modified in place
 */
 void squeeze(char s1[], char s2[])
 {
-    bool found[256] = { 0 };
+    bool found[256] = { false };
     for (int i = 0; s2[i] != '\0'; i++) {
         found[s2[i]] = true;
     }
