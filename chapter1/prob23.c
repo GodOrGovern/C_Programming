@@ -9,28 +9,47 @@
 
 int main(void)
 {
+    int close = EOF;
+    bool inQuote = false, possComm = false;
+
     for (int c; c != EOF; c = getchar()) {
-        if (c == '/') {
-            c = getchar();
-            if (c == '/') {
-                for (; c != '\n'; c = getchar());
-                putchar(c);
-            } else if (c == '*') {
-                for (; c != EOF; c = getchar()) {
-                    if (c == '*' && (c = getchar()) == '/') {
-                        break;
-                    }
-                }
+        if (possComm && c != '/' && c != '*') {
+            putchar('/');
+            possComm = false;
+        }
+        if (c == '\'' || c == '\"') {
+            if (inQuote) {
+                inQuote = c != close;
             } else {
-                putchar('/');
-                putchar(c);
+                inQuote = true;
+                close = c;
             }
-        } else if (c == '\'' || c == '\"') {
+        } else if (c == '/' && !inQuote) {
+            if (possComm) {
+                for (; c != '\n'; c = getchar());
+            }
+            possComm = !possComm;
+        } else if (c == '*' && !inQuote && possComm) {
+            c = getchar();
+            for (; c != EOF; c = getchar()) {
+                if (c == '*' && (c = getchar()) == '/') {
+                    break;
+                }
+            }
+            c = getchar();
+            possComm = false;
+        } else if (c == '\\' && inQuote) {
+            bool evenNum = false;
             putchar(c);
-            for (int close = c; c != close; c = getchar()) {
+            c = getchar();
+            for (; c == '\\'; c = getchar()) {
                 putchar(c);
+                evenNum = !evenNum;
             }
-        } else {
+            inQuote = !(c == close && evenNum);
+        }
+
+        if (!possComm) {
             putchar(c);
         }
     }
